@@ -4,6 +4,11 @@ Status: proposed implementation sequence and acceptance criteria.
 
 ## Milestone 0: networking and recovery feasibility
 
+Alongside feasibility work, establish a small interactive map study early. Its
+purpose is to settle camera, selection, direct orders, and live feedback while
+the networking decisions are researched. Keep fixture logic separate from the
+authoritative simulation and do not treat the study as a completed game milestone.
+
 Create a minimal stateful browser prototype before building the full game. Exercise
 discovery, connection, identity, persistence, a small ordered command stream, and
 owner handover. Settle D-01, D-02, and the all-peers-offline resume policy in D-03.
@@ -79,6 +84,13 @@ crew complements, point thresholds, or target duration from evidence.
 
 | Scenario | Expected result |
 | --- | --- |
+| Drag or pinch begins on a selectable object | Camera moves; releasing the gesture issues no order or purchase |
+| A warship receives a map order | Show its target and physical movement; accepted order uses explicit hull IDs |
+| A selected moving ship receives a replacement order | Continue from its current location without teleportation |
+| A targeted object disappears before acceptance | Reject or cancel with a concrete explanation, without charging costs |
+| A player opens Build or Reports during a fleet engagement | World keeps running; clock and important threat feedback remain visible |
+| A mobile user needs a ship obscured by a cluster | Zoom, disambiguation, or the fleet list provides a usable selection path |
+| A player cancels target mode | Clear local targeting without submitting a simulation command |
 | Three rigs exceed available freighter capacity | Delivered throughput reflects the transport bottleneck |
 | Several routes share one harbour | Combined handling stays within the shared budget |
 | Food stock is low while a sale route is active | Default reserves protect household supply |
@@ -129,8 +141,9 @@ Headless AI matches measure balance; they cannot establish whether controls feel
 good or whether human diplomacy creates an exploit. Test real touch devices and
 real networks for those concerns.
 
-These are planned acceptance criteria. No application implementation or runtime
-verification results are asserted by this specification draft.
+These are planned acceptance criteria for the complete game. The isolated browser
+interaction study explores controls with a local fixture; it does not establish
+the full simulation, multiplayer, recovery, balance, or performance guarantees.
 
 ## Later expansions
 

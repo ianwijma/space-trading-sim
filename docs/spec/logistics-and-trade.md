@@ -13,6 +13,12 @@ Initially each resource unit occupies one cargo/storage unit. Passenger capacity
 is a separate vessel attribute. Different mass or volume multipliers can be added
 later through balance data if they create useful decisions.
 
+Shipments remain visible and selectable while other orders or panels are open.
+Creating a route starts with a source and destination on the map; its inspector
+then exposes cargo, reserves, throughput, and danger. The map can display existing
+lanes and highlight the selected shipment's current journey. A route edit changes
+future movement under the command rules without teleporting a vessel or its cargo.
+
 Freight harbours share their handling rate between loading and unloading. Berths
 limit simultaneous service. Storage handling, free capacity, available vessels,
 and round-trip time also constrain delivered throughput.

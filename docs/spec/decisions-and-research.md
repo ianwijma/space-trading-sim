@@ -13,7 +13,7 @@ networking guarantees must be settled before claiming the first milestone comple
 | D-02 | What happens after an ambiguous two-peer disconnect? | Evaluate casual continuation for friend lobbies and a strict pause option | Open; automatic availability and strict single-history guarantees conflict |
 | D-03 | When may a shared save resume after everybody leaves? | Resume under the agreed membership policy; provide explicit recovery states | Open; a lone returning peer must not silently fork a strict match |
 | D-04 | Match length, target, title roster, and title cap | 30–45 minutes, 15 points, 9 foundation minimum, 6 title-point cap | Proposed; expanded scoring requires measured balance |
-| D-05 | Art direction | Deep Space Operations | Proposed; Industrial Frontier and Orbital Atlas remain alternatives |
+| D-05 | Art direction | Round 02 prioritizes a live tactical map and compact controls; Frontier Guild's palette remains a candidate | Open visual iteration; user found round 01 too static, fantasy-space atmosphere and mobile-first browser use confirmed |
 | D-06 | Exact prices, starter stocks, ship profiles, crew sizes, growth rates, and timing | Use versioned balance data; preserve a valid starting/recovery economy | Open tuning work; current production/population figures are illustrative |
 | D-07 | Caretaker and pause rules | Limited caretaker after a short grace; solo pause and agreed multiplayer pauses | Proposed; spending scope and timeout need playtesting |
 | D-08 | Enemy asteroid capture and elimination | Introduce after piracy and blockade play are balanced | Deferred expansion |
@@ -23,6 +23,7 @@ networking guarantees must be settled before claiming the first milestone comple
 | D-12 | Housing and worker distribution | Housed workers divided by total building demand gives one proportional productivity multiplier for every staffed building, including one-worker machines | Confirmed by user; manual allocation is a future feature, exact worker requirements are tuning values |
 | D-13 | Gradual population growth | Housing raises capacity without spawning workers; automatic local growth replenishes residents over simulated time, inspired by OpenFront | Confirmed by user; the rational growth curve and support gate are proposals, replacing the earlier paid recruitment model |
 | D-14 | Warship crew population | People board from the producing asteroid and leave its workforce; shipyard builders and embarked crew are separate | Confirmed by user; complements of 5/10/20, full-crew commissioning, casualties on destruction, and demobilization are proposals |
+| D-15 | OpenFront-style interaction | Continuous map play, directly selected asteroids/fleets, contextual orders, live movement/combat, and on-demand detail views | Confirmed direction; exact gestures, UI layouts, and response targets are proposals; enemy asteroid conquest remains D-08 |
 
 ## Why the P2P distinctions matter
 
@@ -47,6 +48,7 @@ design around, not capabilities already solved by selecting a package.
 | Subject | Primary documentation or identified reference |
 | --- | --- |
 | Reference game's structure | [OpenFront repository](https://github.com/openfrontio/OpenFrontIO) |
+| Reference live map controls | [Pointer, zoom and fleet input](https://github.com/openfrontio/OpenFrontIO/blob/9453de8567c8465eed4969f316ddcd131d392d6f/src/client/InputHandler.ts) and [map context controller](https://github.com/openfrontio/OpenFrontIO/blob/9453de8567c8465eed4969f316ddcd131d392d6f/src/client/hud/layers/MainRadialMenu.ts) |
 | Reference population capacity and growth | [OpenFront Config at the inspected commit](https://github.com/openfrontio/OpenFrontIO/blob/9453de8567c8465eed4969f316ddcd131d392d6f/packages/engine-lib/src/configuration/Config.ts#L326) and [per-tick update](https://github.com/openfrontio/OpenFrontIO/blob/9453de8567c8465eed4969f316ddcd131d392d6f/packages/engine/src/execution/PlayerExecution.ts#L95) |
 | Reference piracy behaviour | [OpenFront community warship guide](https://openfront.wiki/Warship/) and [trade-ship guide](https://openfront.wiki/Trade_Ship/) |
 | Transferable victory awards | [CATAN official base-game FAQ](https://www.catan.com/faq/basegame) |

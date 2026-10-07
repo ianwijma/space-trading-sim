@@ -1,7 +1,8 @@
 # Architecture and packages
 
-Status: Next.js, Tailwind CSS, and TypeScript are requirements. Module boundaries
-and package selections are researched candidates, not installed dependencies.
+Status: Next.js, Tailwind CSS, and TypeScript are requirements. Production module
+boundaries and package selections remain candidates. An isolated interaction study
+now installs its own browser UI dependencies under `prototypes/map-play`.
 
 ## Application shape
 
@@ -28,8 +29,23 @@ without a browser so the same rules support replay and automated AI matches.
 | `src/game/rendering` | Map, ships, effects, camera, local interpolation |
 | `src/features` | Lobby, settlement inspector, route editor, reports, scorecard |
 
-These are proposed directories for implementation; the repository currently contains
-specifications. One repository is sufficient initially.
+These are proposed directories for the complete game. The repository contains
+specifications, visual studies, and an isolated browser interaction prototype.
+One repository is sufficient initially.
+
+## Interaction boundary
+
+The camera, selection, contextual controls, and target preview run locally and
+respond promptly. A UI intent becomes a validated, identified simulation command
+only when submitted. Rendering reads snapshots and interpolates physical motion;
+it does not mutate inventory, population, capture status, or other authoritative state.
+Keep movement/combat presentation responsive independently of report aggregation.
+
+The study uses React/SVG, `react-zoom-pan-pinch`, and `lucide-react` to explore this
+interaction cheaply. Its Next.js entry and standalone HTML export share the same
+TypeScript components. This does not replace the proposed Pixi/worker architecture
+or establish large-match performance. Its local fixture has no P2P authority,
+durable match restoration, complete economy, or full AI.
 
 ## Clock and determinism
 

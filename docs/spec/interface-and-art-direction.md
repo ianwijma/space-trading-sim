@@ -1,28 +1,44 @@
 # Interface and art direction
 
-Status: space theme, mobile support, and OpenFront-like readability are requirements;
-the visual directions and layouts below are proposals.
+Status: a fantasy-space theme inspired by Star Trek, Star Wars, and related space
+adventures, mobile-first browser support, and OpenFront-like live map play are
+requirements. Visual directions and layouts below are proposals.
+
+## Gameplay comes first
+
+The default screen is a large, interactive tactical map with moving vessels,
+visible orders, and contextual controls. The user found round 01 too static.
+Round 02 therefore prioritizes camera movement, selection, targeting, fleet
+activity, and responsive feedback. Detailed illustrations and large management
+panels are secondary views. See [Map interaction and gameplay](map-interaction-and-gameplay.md).
 
 ## Visual directions
 
 | Direction | Palette | Treatment |
 | --- | --- | --- |
-| Deep Space Operations | Ink #080F1F, cyan #55DDE0, amber #FFB454 | Crisp silhouettes, restrained stars, clear tactical overlays |
-| Industrial Frontier | Charcoal #171B20, copper #D88A4A, pale blue #9BC7DC | Rugged mining installations, utilitarian panels, strong status lights |
-| Orbital Atlas | Midnight #11152B, lavender #A89AFF, ice white #EAF2FF | Subtle nebulae, elegant orbital graphics, softer approachable panels |
+| Starlight Command | Ink #091522, teal #68D8CE, saffron #E8B65D | Clear naval controls, hopeful exploration, restrained bridge-display geometry |
+| Frontier Guild | Petroleum #101C23, parchment #EFE7D3, brass #D1AA61, mint #8BDBC5 | Lived-in starports, merchant guilds, original fleets, warm tactile panels |
+| Celestial Atlas | Aubergine #151327, lilac #B3A3E5, pearl #F2EDF4, gold #D6BA77 | Ancient navigation charts, crystalline architecture, restrained celestial detail |
 
-Deep Space Operations is the recommended initial direction, pending D-05.
-Use original artwork and interfaces, with OpenFront as a readability reference.
+These develop the initial palette proposals into the first actual mockups.
+Frontier Guild's palette remains a candidate, pending feedback under D-05. The
+working map uses simpler top-down asteroids and compact controls. The earlier
+boards remain aesthetic studies; their large portraits and panels do not define
+the normal gameplay layout. View the [visual design studies](../design/README.md)
+for the earlier concepts and current interactive study.
 
 ## Map hierarchy
 
-The map is the main surface. Asteroid scale communicates construction capacity;
+The map is the primary interaction surface. Asteroid scale communicates construction capacity;
 deposit icons communicate resource; ownership uses outlines and faction emblems.
 Do not use the same colour encoding for ownership and natural resources.
 
 At wide zoom show ownership, resource icons, major routes, and fleet groups.
 At closer zoom reveal buildings, cargo ships, damage, and local service states.
 The asteroid silhouette and building count should remain legible on a phone.
+Selected fleets show their destination or tracked target. Show real shipment
+movement, construction progress, engagement effects, and boarding state. Reduce
+detail at wide zoom so many asteroids and competing fleets remain readable.
 
 Show housing and available/required workers with the shared productivity percentage,
 for example "5 / 10 workers · 50% staffing." Displaced people and spare workers
@@ -38,23 +54,30 @@ population refill.
 ## Main surfaces
 
 - Lobby: invitation, slots, AI settings, map rules, scoring preset, ready state.
-- Map: selection, construction, routes, fleet orders, and settlement status.
-- Economy: resource, labour, support, capacity, and trade reports.
-- Scorecard: points, title competition, achievements, and victory countdowns.
+- Map: persistent live play, selection, construction, routes, fleet orders, and settlement status.
+- Economy overlay: resource, labour, support, capacity, and trade reports on demand.
+- Scorecard overlay: points, title competition, achievements, and victory countdowns.
 - Recovery: reconnect progress, current owner, and stale-save status.
 - Results: scoring timeline, economic history, and key military events.
 
 ## Desktop layout
 
-Use a compact resource and score bar, selection inspector, and collapsible reports.
+Use a compact resource and score bar, an optional selected-object inspector, and
+collapsible reports. Leave the unselected map broadly unobstructed. Give commands
+through map targets and contextual controls; right-click may provide shortcuts.
 Support keyboard shortcuts for common map and fleet actions. Keep critical
 commands available through visible controls as well.
 
 ## Mobile layout
 
 Support portrait and landscape. Use pinch zoom and one-finger panning on the map,
-tap selection, and a bottom sheet with Build, Routes, Fleet, and Economy actions.
+tap selection, and compact context actions. Expand a bottom sheet for detailed
+construction, shipyard, or reporting tasks when requested. Global controls expose
+the map, fleet selection/list, flows, and help without navigating away from the match.
 Use approximately 44–48 CSS-pixel touch targets and respect device safe areas.
+Drag and pinch must suppress order taps; targets need an unambiguous intent and
+a visible Cancel action. Full bindings and command states are defined in the
+[interaction specification](map-interaction-and-gameplay.md).
 
 Creating a route can be: select source, choose cargo and policy, tap destination,
 review capacity and household reserves, confirm. Moving workers uses a resident
@@ -77,6 +100,8 @@ states that the ship is removed and checks housing for its returning crew.
 Confirm resource spending and orders with visible states: pending, accepted,
 under construction, blocked, or completed. Explain blocked orders in concrete
 terms such as missing workers, water, berths, or construction slots.
+Show command feedback on the relevant object or path. Opening a panel does not
+pause production or combat; preserve simulation time and threat awareness.
 
 Use icons and text with colour. Support reduced motion, readable tabular numbers,
 adequate contrast, and keyboard-accessible DOM controls. Important chart data needs

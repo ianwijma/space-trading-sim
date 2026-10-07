@@ -8,6 +8,11 @@ Build an asteroid economy, settle workers, move physical goods, protect trade,
 and choose a route to victory. The map should be readable at a glance, with the
 strategic accessibility of OpenFront and several scoring paths inspired by Catan.
 
+Play unfolds continuously on the map. Players select colonies and fleets, give
+contextual orders, and react to visible shipping and combat while the economy
+continues. [Map interaction and gameplay](map-interaction-and-gameplay.md) defines
+this moment-to-moment experience.
+
 Infinite deposits make extraction rate, construction space, labour, local
 services, transport, and security the scarce assets. A useful decision should
 usually improve one of these at the expense of another.
@@ -15,6 +20,8 @@ usually improve one of these at the expense of another.
 ## Confirmed requirements
 
 - A browser game usable on mobile, built with Next.js, Tailwind CSS, and TypeScript.
+- OpenFront-like real-time play: an interactive map, direct object selection and
+  orders, continuously moving vessels, and visible economic and combat activity.
 - A randomly generated asteroid world; each asteroid has exactly one natural
   resource, and deposits never deplete.
 - Repeatable buildings with finite throughput and construction constrained by
@@ -49,6 +56,7 @@ usually improve one of these at the expense of another.
 | Map size | Approximately 80–120 asteroids, scaled to commander count |
 | Victory | 15 points held for 60 seconds, with the foundation-point condition |
 | Information | Open board in the first release |
+| Interaction | Continuous map play; contextual commands; optional detail panels |
 | Deposits | Four natural resource types |
 | Population | Gradual local growth within housing capacity; shared workforce coverage; warships take workers aboard; proposed food and water support |
 | Transport | Automated physical shipments and optional manual route settings |
@@ -63,6 +71,8 @@ economic reporting, mobile controls, lobbies, persistence, and host recovery.
 
 The prototype should introduce these in stages. A playable slice can have fewer
 resources or bots while the first complete release still targets the requirements.
+An early interaction study must establish the camera, selection, orders, and
+continuous feedback before the art direction is treated as settled.
 
 ## Expansion candidates
 
@@ -75,6 +85,8 @@ balance decision because early removal makes short social games less enjoyable.
 ## Design principles
 
 - Automation handles routine movement; players choose priorities and destinations.
+- The main play surface supports direct action. Inspecting a report or construction
+  queue leaves the world running under the match's explicit pause policy.
 - A shortage or stalled building should have an understandable explanation.
 - Scoring paths should create interaction without forcing every faction into war.
 - Housing determines the workforce an asteroid can support. Shared staffing keeps

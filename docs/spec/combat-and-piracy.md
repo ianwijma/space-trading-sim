@@ -28,6 +28,13 @@ automatically within their order and engagement rules. Players can select retrea
 health and acceptable pursuit distance; escorts should not abandon a convoy to
 chase an irrelevant target across the map.
 
+Players give these orders by selecting warships and locations or moving targets
+on the map. Group commands use explicit selected hull IDs. Show accepted orders,
+pursuit, escort association, health, and boarding progress in the world; a
+combat report is a secondary view. Replacing an order keeps each vessel at its
+current position. Input and feedback rules belong to
+[Map interaction and gameplay](map-interaction-and-gameplay.md).
+
 Movement and combat run on fixed simulation ticks. Weapon effects communicate
 the underlying state and never independently apply damage. Damage and target
 selection use deterministic ordering and seeded randomness if a weapon needs it.
