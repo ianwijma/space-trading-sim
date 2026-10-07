@@ -12,6 +12,7 @@ prototype's scope and the Next.js entry point.
 
 Useful entry points:
 
+- [Full-game implementation plan for Astra orchestration](docs/implementation-plan.md)
 - [Visual designs and mockups](docs/design/README.md)
 - [Live map interaction](docs/spec/map-interaction-and-gameplay.md)
 - [Game vision and scope](docs/spec/vision-and-scope.md)
