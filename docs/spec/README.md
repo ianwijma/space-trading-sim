@@ -10,6 +10,7 @@ set is not a prerequisite for understanding one feature.
 | Question | Document |
 | --- | --- |
 | What game are we building, and what is required? | [Vision and scope](vision-and-scope.md) |
+| How does live play, map selection, targeting, and direct control work? | [Map interaction and gameplay](map-interaction-and-gameplay.md) |
 | How are asteroids, resources, and starting positions generated? | [World and resources](world-and-resources.md) |
 | What can players build, and what limits output? | [Buildings and production](buildings-and-production.md) |
 | How do housing, workers, food, and water work? | [Housing and workers](housing-and-workers.md) |
@@ -24,6 +25,7 @@ set is not a prerequisite for understanding one feature.
 | What happens after reloads, disconnects, or closing every browser? | [Persistence and recovery](persistence-and-recovery.md) |
 | How should the code be organized, and which packages should we use? | [Architecture and packages](architecture-and-packages.md) |
 | What does the game look like on mobile and desktop? | [Interface and art direction](interface-and-art-direction.md) |
+| Where can I compare the current visual mockups? | [Visual design studies](../design/README.md) |
 | What gets built first, and how do we establish correctness? | [Delivery and validation](delivery-and-validation.md) |
 | Which decisions remain open, and what research supports the design? | [Decisions and research](decisions-and-research.md) |
 
